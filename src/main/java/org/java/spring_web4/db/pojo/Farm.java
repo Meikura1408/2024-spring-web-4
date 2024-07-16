@@ -2,6 +2,7 @@ package org.java.spring_web4.db.pojo;
 
 import java.util.List;
 
+import org.java.spring_web4.web.data.dto.FarmDto;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -30,7 +31,7 @@ public class Farm {
     @OneToMany(mappedBy = "farm", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Farmer> farmers;
 
-    public Farm() {}
+    public Farm(FarmDto farmDto) {}
 
     public Farm(String name, String city) {
         setName(name);
@@ -71,6 +72,13 @@ public class Farm {
 
     public void addFarmer(Farmer farmer) {
         farmers.add(farmer);
+    }
+
+    public void update(FarmDto farmDto) {
+
+        setName(farmDto.getName());
+        setCity(farmDto.getCity());
+
     }
 
     @Override

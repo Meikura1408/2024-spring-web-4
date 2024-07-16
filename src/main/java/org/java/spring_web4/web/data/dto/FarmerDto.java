@@ -7,6 +7,7 @@ public class FarmerDto {
     private int age;
     private int farmId;
 
+    public FarmerDto(){}
 
     public String getName() {
         return name;
@@ -31,14 +32,6 @@ public class FarmerDto {
     }
     public void setFarmId(int farmId) {
         this.farmId = farmId;
-    }
-
-    public void update(FarmerDto farmerDto) {
-
-        setName(farmerDto.getName());
-        setSurname(farmerDto.getSurname());
-        setAge(farmerDto.getAge());
-
     }
 
     @Override
